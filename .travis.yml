@@ -14,21 +14,20 @@ install:
   - git checkout 2.4.2
 
 before_script:
-  - cat Doxyfile.patch >> SFML/doc/doxyfile.in
+  - cat ../Doxyfile.patch >> doc/doxyfile.in
 
 script:
-  - mkdir SFML/build
-  - cd SFML/build
-  - cmake -D${docs}=TRUE ..
+  - mkdir build
+  - cd build
+  - cmake -DBUILD_SHARED_LIBS=FALSE -DSFML_BUILD_WINDOW=FALSE -DSFML_BUILD_GRAPHICS=FALSE -DSFML_BUILD_AUDIO=FALSE -DSFML_BUILD_NETWORK=FALSE -DSFML_BUILD_DOC=TRUE ..
   - make doc
   - cd doc/html
   - make
 
 before_deploy:
-  - cd SFML/build/doc/html
-  - wget ${http://icon.png}
-  - convert ${icon.png} -resize 16x16! SFML.docset/icon.png
-  - convert ${icon.png} -resize 32x32! SFML.docset/icon@2x.png
+  - wget "https://www.sfml-dev.org/download/goodies/sfml-icon-small.png"
+  - convert sfml-icon-small.png -resize 16x16! SFML.docset/icon.png
+  - convert sfml-icon-small.png -resize 32x32! SFML.docset/icon@2x.png
   - tar --exclude='.DS_Store' -cvzf SFML.tgz SFML.docset
 
 deploy:
