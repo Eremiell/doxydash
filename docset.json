@@ -1,0 +1,17 @@
+{
+    "name": "SFML",
+    "version": "2.4.2-b0",
+    "archive": "SFML.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "2.4.2-b0",
+            "archive": "versions/2.4.2-b0/SFML.tgz",
+        }
+    ]
+}
