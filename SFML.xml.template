@@ -1,0 +1,4 @@
+<entry>
+	<version>${VERSION}-${RELEASE}</version>
+	<url>http://github.com/Eremiell/doxydash/releases/download/SFML-${VERSION}-${RELEASE}/SFML.tgz</url>
+</entry>
