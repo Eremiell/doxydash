@@ -44,4 +44,3 @@ deploy:
   skip_cleanup: true
   on:
     repo: Eremiell/doxydash
-    tags: true
