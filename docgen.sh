@@ -31,7 +31,7 @@ fi
 
 BRANCH="$(cat branch)"
 
-ls -a | grep template | while read line; do
+ls -a | grep -E "template$" | while read line; do
 	cat ${line} | sed s/"\${VERSION}"/"${VERSION}"/g | sed s/"\${RELEASE}"/"${RELEASE}"/g > ${line%.template}
 done
 

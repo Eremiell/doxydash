@@ -15,7 +15,7 @@ BRANCH="${1}"
 git checkout -b "${BRANCH}"
 
 
-ls -a | grep template.generic | while read line; do
+ls -a | grep .generic | while read line; do
 	cat ${line} | sed s/"\${BRANCH}"/"${BRANCH}"/g > $(echo ${line%.generic} | sed s/"\${BRANCH}"/"${BRANCH}"/)
 done
 
