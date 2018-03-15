@@ -1,0 +1,46 @@
+language: cpp
+os: osx
+osx_image: xcode9.3beta
+branches:
+  only:
+  - ${BRANCH}
+
+before_install:
+  - brew update && brew bundle
+
+install:
+  - git clone https://github.com/${BRANCH}/${BRANCH}.git
+  - cd ${BRANCH}
+  - git checkout ${VERSION}
+
+before_script:
+  - cat Doxyfile.patch >> ${BRANCH}/doc/doxyfile.in
+
+script:
+  - mkdir ${BRANCH}/build
+  - cd ${BRANCH}/build
+  - cmake -D${docs}=TRUE ..
+  - make doc
+  - cd doc/html
+  - make
+
+before_deploy:
+  - cd ${BRANCH}/build/doc/html
+  - wget ${http://icon.png}
+  - convert ${icon.png} -resize 16x16! ${BRANCH}.docset/icon.png
+  - convert ${icon.png} -resize 32x32! ${BRANCH}.docset/icon@2x.png
+  - tar --exclude='.DS_Store' -cvzf ${BRANCH}.tgz ${BRANCH}.docset
+
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file:
+    - "${BRANCH}/build/doc/html/${BRANCH}.tgz"
+    - "${BRANCH}/build/doc/html/${BRANCH}.docset/icon.png"
+    - "${BRANCH}/build/doc/html/${BRANCH}.docset/icon@2x.png"
+    - "docset.json"
+    - "README.md"
+    - "${BRANCH}.xml"
+  skip_cleanup: true
+  on:
+    tags: true

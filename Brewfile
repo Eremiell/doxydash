@@ -1,0 +1,7 @@
+brew 'doxygen'
+brew 'graphviz'
+brew 'git'
+brew 'imagemagick'
+brew 'cmake'
+brew 'wget'
+brew 'make'
