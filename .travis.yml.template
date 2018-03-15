@@ -29,6 +29,7 @@ before_deploy:
   - convert sfml-icon-small.png -resize 16x16! SFML.docset/icon.png
   - convert sfml-icon-small.png -resize 32x32! SFML.docset/icon@2x.png
   - tar --exclude='.DS_Store' -cvzf SFML.tgz SFML.docset
+  - cd ../../../..
 
 deploy:
   provider: releases
