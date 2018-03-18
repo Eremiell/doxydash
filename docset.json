@@ -1,6 +1,6 @@
 {
     "name": "SFML",
-    "version": "2.4.2-b8",
+    "version": "2.4.2-b9",
     "archive": "SFML.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "2.4.2-b8",
-            "archive": "versions/2.4.2-b8/SFML.tgz",
+            "version": "2.4.2-b9",
+            "archive": "versions/2.4.2-b9/SFML.tgz",
         }
     ]
 }
