@@ -29,7 +29,7 @@ before_deploy:
   - wget ${http://icon.png}
   - convert ${icon.png} -resize 16x16! ${BRANCH}.docset/icon.png
   - convert ${icon.png} -resize 32x32! ${BRANCH}.docset/icon@2x.png
-  - sed -i 's@<string>doxygen</string>@<string>${BRANCH}</string>@' ${BRANCH}.docset/Contents/Info.plist
+  - sed -i "" 's@<string>doxygen</string>@<string>${BRANCH}</string>@' ${BRANCH}.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf ${BRANCH}.tgz ${BRANCH}.docset
 
 deploy:
