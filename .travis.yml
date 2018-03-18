@@ -28,6 +28,7 @@ before_deploy:
   - wget "https://www.sfml-dev.org/download/goodies/sfml-icon-small.png"
   - convert sfml-icon-small.png -resize 16x16! SFML.docset/icon.png
   - convert sfml-icon-small.png -resize 32x32! SFML.docset/icon@2x.png
+  - sed -i 's@<string>doxygen</string>@<string>sfml</string>@' ${BRANCH}.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf SFML.tgz SFML.docset
   - cd ../../../..
 
