@@ -1,0 +1,17 @@
+{
+    "name": "TinyXML2",
+    "version": "7.0.0-b0",
+    "archive": "TinyXML2.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "7.0.0-b0",
+            "archive": "versions/7.0.0-b0/TinyXML2.tgz",
+        }
+    ]
+}
