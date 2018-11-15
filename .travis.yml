@@ -11,7 +11,7 @@ before_install:
 install:
   - git clone https://github.com/SFML/SFML.git
   - cd SFML
-  - git checkout 2.5.0
+  - git checkout 2.5.1
 
 before_script:
   - cat ../Doxyfile.patch >> doc/doxyfile.in
