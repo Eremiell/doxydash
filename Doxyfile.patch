@@ -1,0 +1,6 @@
+GENERATE_DOCSET        = YES
+DISABLE_INDEX          = YES 
+SEARCHENGINE           = NO
+GENERATE_TREEVIEW      = NO
+HTML_EXTRA_STYLESHEET  = css/mylayout_docset.css
+DOCSET_BUNDLE_ID       = nlohmann-json
