@@ -1,0 +1,4 @@
+<entry>
+	<version>${VERSION}-${RELEASE}</version>
+	<url>http://github.com/Eremiell/doxydash/releases/download/TinyXML2-${VERSION}-${RELEASE}/TinyXML2.tgz</url>
+</entry>
