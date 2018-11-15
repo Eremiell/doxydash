@@ -1,0 +1,17 @@
+{
+    "name": "nlohmann-json",
+    "version": "v3.4.0-b0",
+    "archive": "nlohmann-json.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "v3.4.0-b0",
+            "archive": "versions/v3.4.0-b0/nlohmann-json.tgz",
+        }
+    ]
+}

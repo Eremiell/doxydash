@@ -1,0 +1,50 @@
+language: cpp
+os: osx
+osx_image: xcode9.2
+branches:
+  only:
+  - nlohmann-json
+
+before_install:
+  - brew update && brew bundle
+
+install:
+  - git clone https://github.com/nlohmann/json.git
+  - cd json
+  - git checkout v3.4.0
+
+before_script:
+  - cd doc
+  - cat ../../Doxyfile.patch >> Doxyfile
+
+script:
+  - make create_output
+  - doxygen
+  - sed -i "" 's@&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberFloatType, AllocatorType &gt;@@g' html/*.html
+  - sed -i "" 's@&lt;&#160;ObjectType,&#160;ArrayType,&#160;StringType,&#160;BooleanType,&#160;NumberIntegerType,&#160;NumberFloatType,&#160;AllocatorType&#160;&gt;@@g' html/*.html
+  - cd html
+  - make
+
+before_deploy:
+  - wget https://imgur.com/download/DFBViIP -O icon.png
+  - convert icon.png -resize 16x16! nlohmann-json.docset/icon.png
+  - convert icon.png -resize 32x32! nlohmann-json.docset/icon@2x.png
+  - sed -i "" 's@<string>doxygen</string>@<string>json</string>@' nlohmann-json.docset/Contents/Info.plist
+  - tar --exclude='.DS_Store' -cvzf nlohmann-json.tgz nlohmann-json.docset
+  - cd ../../..
+
+deploy:
+  provider: releases
+  api_key:
+    secure: RqFbiUdB6pegzmvEfD+tY3SCnYZ8AIDTB8ZJhvgTnCDG0vwkl63I3YGwdWpf4JbtG0M333pRxuaeIDSs/ncVQ9Qmj+lIzJXBZpYAehU0k8UyxRtf6BTC488xOpcIrux8JkrMSNrwhX5vTBk/c/S3dr64WbJJKIy5cVSoIt5EeWtSbjdjcxu5NKoHxRbzDdMJPPmFLad7se8bjuW839LWX7JucG2iGJ3jkYL+lsD0jAf7LVsrnW0iCoNDLWfYSNyrMDcXmfY7lWKV1bPx5AOOivgl65/lea1XAi7TKeq3uKlBd1rqer5+piWAayFg6pltDh+gCCebhdAGBvVhMApSR5Zouxe6/A+fyALSO8PAKDg6JuB17qijXwCRRc4dxnR/QYCw38dvUyQ00moqXiTiS0hURVJ4ew8xEH0pjuam9fj2o60+rWt+n5LnzrPyhA+r8OBeHz0hcXyyYbdH+WZAjBECBvFlBjkNQFvVlAyXvNR0gtkS1dStE6e6775/6IPbRDmWbYKN4PQplTS8mKdy6RR77zPdXhUpO3rZwrGYUjfATdI02boAqB/leOAJJXUTBlJ0EBTFSzOEqNcjs4JjSEKrwALPictZ/4Z4o19y/I0aK1xIL7u2x4FWMj9eXTCz1iri3Ha9392oYc5wwqwM9G2cSLbMWNOcq9n6NvHS0Mc=
+  file:
+    - "json/doc/html/nlohmann-json.tgz"
+    - "json/doc/html/nlohmann-json.docset/icon.png"
+    - "json/doc/html/nlohmann-json.docset/icon@2x.png"
+    - "docset.json"
+    - "README.md"
+    - "nlohmann-json.xml"
+  skip_cleanup: true
+  on:
+    repo: Eremiell/doxydash
+    branch: nlohmann-json
