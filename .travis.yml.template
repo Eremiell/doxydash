@@ -1,0 +1,46 @@
+language: cpp
+os: osx
+osx_image: xcode9.2
+branches:
+  only:
+  - MySQL++
+
+before_install:
+  - brew update && brew bundle
+
+install:
+  - wget https://tangentsoft.com/mysqlpp/releases/mysql++-${VERSION}.tar.gz
+  - tar xzf mysql++-${VERSION}.tar.gz
+  - cd mysql++-${VERSION}/lib
+
+before_script:
+  - cat ../../Doxyfile.patch >> Doxyfile
+
+script:
+  - doxygen
+  - cd ../doc/html
+  - make
+
+before_deploy:
+  - wget https://imgur.com/download/DEieO8h -O icon.png
+  - convert icon.png -resize 16x16! MySQL++.docset/icon.png
+  - convert icon.png -resize 32x32! MySQL++.docset/icon@2x.png
+  - sed -i "" 's@<string>doxygen</string>@<string>mysqlpp</string>@' MySQL++.docset/Contents/Info.plist
+  - tar --exclude='.DS_Store' -cvzf MySQL++.tgz MySQL++.docset
+  - cd ../../..
+
+deploy:
+  provider: releases
+  api_key:
+    secure: RqFbiUdB6pegzmvEfD+tY3SCnYZ8AIDTB8ZJhvgTnCDG0vwkl63I3YGwdWpf4JbtG0M333pRxuaeIDSs/ncVQ9Qmj+lIzJXBZpYAehU0k8UyxRtf6BTC488xOpcIrux8JkrMSNrwhX5vTBk/c/S3dr64WbJJKIy5cVSoIt5EeWtSbjdjcxu5NKoHxRbzDdMJPPmFLad7se8bjuW839LWX7JucG2iGJ3jkYL+lsD0jAf7LVsrnW0iCoNDLWfYSNyrMDcXmfY7lWKV1bPx5AOOivgl65/lea1XAi7TKeq3uKlBd1rqer5+piWAayFg6pltDh+gCCebhdAGBvVhMApSR5Zouxe6/A+fyALSO8PAKDg6JuB17qijXwCRRc4dxnR/QYCw38dvUyQ00moqXiTiS0hURVJ4ew8xEH0pjuam9fj2o60+rWt+n5LnzrPyhA+r8OBeHz0hcXyyYbdH+WZAjBECBvFlBjkNQFvVlAyXvNR0gtkS1dStE6e6775/6IPbRDmWbYKN4PQplTS8mKdy6RR77zPdXhUpO3rZwrGYUjfATdI02boAqB/leOAJJXUTBlJ0EBTFSzOEqNcjs4JjSEKrwALPictZ/4Z4o19y/I0aK1xIL7u2x4FWMj9eXTCz1iri3Ha9392oYc5wwqwM9G2cSLbMWNOcq9n6NvHS0Mc=
+  file:
+    - "mysql++-${VERSION}/doc/html/MySQL++.tgz"
+    - "mysql++-${VERSION}/doc/html/MySQL++.docset/icon.png"
+    - "mysql++-${VERSION}/doc/html/MySQL++.docset/icon@2x.png"
+    - "docset.json"
+    - "README.md"
+    - "MySQL++.xml"
+  skip_cleanup: true
+  on:
+    repo: Eremiell/doxydash
+    branch: MySQL++
