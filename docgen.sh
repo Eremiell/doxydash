@@ -38,7 +38,7 @@ done
 echo -n "${VERSION}" > version
 echo -n "${RELEASE}" > release
 
-git add docset.json ${BRANCH}.xml .travis.yml README.md version release
+git add docset.json ${BRANCH}.xml .travis.yml README.md version release Doxyfile
 git commit -m "${BRANCH}-${VERSION}-${RELEASE}"
 git tag "${BRANCH}-${VERSION}-${RELEASE}"
 git push --tags origin "${BRANCH}"
