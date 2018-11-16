@@ -1,0 +1,4 @@
+<entry>
+	<version>${VERSION}-${RELEASE}</version>
+	<url>http://github.com/Eremiell/doxydash/releases/download/Botan-${VERSION}-${RELEASE}/Botan.tgz</url>
+</entry>
