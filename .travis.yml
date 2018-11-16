@@ -16,6 +16,7 @@ install:
 before_script:
   - cd doc
   - cat ../../Doxyfile.patch >> Doxyfile
+  - rm conf.py
 
 script:
   - doxygen
