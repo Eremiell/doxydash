@@ -14,9 +14,9 @@ install:
   - git checkout 6.2.5
 
 before_script:
+  - cat ../Doxyfile.patch >> doc/Doxyfile.in
+  - ./configure
   - cd doc
-  - cat ../../Doxyfile.patch >> Doxyfile
-  - rm conf.py
 
 script:
   - doxygen
