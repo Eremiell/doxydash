@@ -1,0 +1,17 @@
+{
+    "name": "mongocxx",
+    "version": "r3.4.0-b0",
+    "archive": "mongocxx.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "r3.4.0-b0",
+            "archive": "versions/r3.4.0-b0/mongocxx.tgz",
+        }
+    ]
+}
