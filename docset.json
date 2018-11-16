@@ -1,6 +1,6 @@
 {
     "name": "Crypto++",
-    "version": "CRYPTOPP_7_0_0-b0",
+    "version": "CRYPTOPP_7_0_0-b1",
     "archive": "Crypto++.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "CRYPTOPP_7_0_0-b0",
-            "archive": "versions/CRYPTOPP_7_0_0-b0/Crypto++.tgz",
+            "version": "CRYPTOPP_7_0_0-b1",
+            "archive": "versions/CRYPTOPP_7_0_0-b1/Crypto++.tgz",
         }
     ]
 }
