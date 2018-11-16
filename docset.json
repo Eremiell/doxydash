@@ -1,0 +1,17 @@
+{
+    "name": "MySQL++",
+    "version": "3.2.4-b0",
+    "archive": "MySQL++.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "3.2.4-b0",
+            "archive": "versions/3.2.4-b0/MySQL++.tgz",
+        }
+    ]
+}
