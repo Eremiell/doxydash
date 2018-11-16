@@ -29,6 +29,7 @@ before_deploy:
   - convert favicon.png -resize 32x32! mongocxx.docset/icon@2x.png
   - sed -i "" 's@<string>doxygen</string>@<string>mongocxx</string>@' mongocxx.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf mongocxx.tgz mongocxx.docset
+  - cd ../../../../..
 
 deploy:
   provider: releases

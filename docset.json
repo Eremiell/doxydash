@@ -1,6 +1,6 @@
 {
     "name": "mongocxx",
-    "version": "r3.4.0-b0",
+    "version": "r3.4.0-b1",
     "archive": "mongocxx.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "r3.4.0-b0",
-            "archive": "versions/r3.4.0-b0/mongocxx.tgz",
+            "version": "r3.4.0-b1",
+            "archive": "versions/r3.4.0-b1/mongocxx.tgz",
         }
     ]
 }
