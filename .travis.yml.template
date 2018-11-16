@@ -31,7 +31,7 @@ before_deploy:
   - convert icon.png -resize 32x32! MySQL++.docset/icon@2x.png
   - sed -i "" 's@<string>doxygen</string>@<string>mysqlpp</string>@' MySQL++.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf MySQL++.tgz MySQL++.docset
-  - cd ../../..
+  - cd ../../../..
 
 deploy:
   provider: releases
