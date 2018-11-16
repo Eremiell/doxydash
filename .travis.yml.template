@@ -34,9 +34,9 @@ deploy:
   api_key:
     secure: RqFbiUdB6pegzmvEfD+tY3SCnYZ8AIDTB8ZJhvgTnCDG0vwkl63I3YGwdWpf4JbtG0M333pRxuaeIDSs/ncVQ9Qmj+lIzJXBZpYAehU0k8UyxRtf6BTC488xOpcIrux8JkrMSNrwhX5vTBk/c/S3dr64WbJJKIy5cVSoIt5EeWtSbjdjcxu5NKoHxRbzDdMJPPmFLad7se8bjuW839LWX7JucG2iGJ3jkYL+lsD0jAf7LVsrnW0iCoNDLWfYSNyrMDcXmfY7lWKV1bPx5AOOivgl65/lea1XAi7TKeq3uKlBd1rqer5+piWAayFg6pltDh+gCCebhdAGBvVhMApSR5Zouxe6/A+fyALSO8PAKDg6JuB17qijXwCRRc4dxnR/QYCw38dvUyQ00moqXiTiS0hURVJ4ew8xEH0pjuam9fj2o60+rWt+n5LnzrPyhA+r8OBeHz0hcXyyYbdH+WZAjBECBvFlBjkNQFvVlAyXvNR0gtkS1dStE6e6775/6IPbRDmWbYKN4PQplTS8mKdy6RR77zPdXhUpO3rZwrGYUjfATdI02boAqB/leOAJJXUTBlJ0EBTFSzOEqNcjs4JjSEKrwALPictZ/4Z4o19y/I0aK1xIL7u2x4FWMj9eXTCz1iri3Ha9392oYc5wwqwM9G2cSLbMWNOcq9n6NvHS0Mc=
   file:
-    - "cryptopp/build/doc/html/Crypto++.tgz"
-    - "cryptopp/build/doc/html/Crypto++.docset/icon.png"
-    - "cryptopp/build/doc/html/Crypto++.docset/icon@2x.png"
+    - "cryptopp/html-docs/Crypto++.tgz"
+    - "cryptopp/html-docs/Crypto++.docset/icon.png"
+    - "cryptopp/html-docs/Crypto++.docset/icon@2x.png"
     - "docset.json"
     - "README.md"
     - "Crypto++.xml"
