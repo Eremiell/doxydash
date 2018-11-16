@@ -1,6 +1,6 @@
 {
     "name": "MySQL++",
-    "version": "3.2.4-b1",
+    "version": "3.2.4-b2",
     "archive": "MySQL++.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "3.2.4-b1",
-            "archive": "versions/3.2.4-b1/MySQL++.tgz",
+            "version": "3.2.4-b2",
+            "archive": "versions/3.2.4-b2/MySQL++.tgz",
         }
     ]
 }
