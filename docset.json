@@ -1,6 +1,6 @@
 {
     "name": "TinyXML2",
-    "version": "7.0.0-b0",
+    "version": "7.0.1-b2",
     "archive": "TinyXML2.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "7.0.0-b0",
-            "archive": "versions/7.0.0-b0/TinyXML2.tgz",
+            "version": "7.0.1-b2",
+            "archive": "versions/7.0.1-b2/TinyXML2.tgz",
         }
     ]
 }
