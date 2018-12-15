@@ -13,7 +13,8 @@ install:
   - cd synfig
   - git checkout v1.3.10
   - cd ETL
-  - ./bootstrap.sh
+  - ./autogen.sh
+#  - ./bootstrap.sh
 
 before_script:
   - cat ../../Doxyfile.patch >> doxygen.cfg

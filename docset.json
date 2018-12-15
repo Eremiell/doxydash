@@ -1,6 +1,6 @@
 {
     "name": "ETL",
-    "version": "v1.3.10-b0",
+    "version": "v1.3.10-b1",
     "archive": "ETL.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "v1.3.10-b0",
-            "archive": "versions/v1.3.10-b0/ETL.tgz",
+            "version": "v1.3.10-b1",
+            "archive": "versions/v1.3.10-b1/ETL.tgz",
         }
     ]
 }
