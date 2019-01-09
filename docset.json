@@ -1,0 +1,17 @@
+{
+    "name": "WebSocket++",
+    "version": "0.8.1-b0",
+    "archive": "WebSocket++.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "0.8.1-b0",
+            "archive": "versions/0.8.1-b0/WebSocket++.tgz",
+        }
+    ]
+}
