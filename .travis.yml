@@ -11,7 +11,7 @@ before_install:
 install:
   - git clone https://github.com/randombit/botan.git
   - cd botan
-  - git checkout 2.8.0
+  - git checkout 2.9.0
 
 before_script:
   - ./configure.py --with-doxygen
