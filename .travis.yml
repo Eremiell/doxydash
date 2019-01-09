@@ -11,7 +11,7 @@ before_install:
 install:
   - git clone https://github.com/weidai11/cryptopp.git
   - cd cryptopp
-  - git checkout CRYPTOPP_7_0_0
+  - git checkout CRYPTOPP_8_0_0
 
 before_script:
   - cat ../Doxyfile.patch >> Doxyfile
