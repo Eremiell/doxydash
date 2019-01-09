@@ -1,0 +1,4 @@
+<entry>
+	<version>${VERSION}-${RELEASE}</version>
+	<url>http://github.com/Eremiell/doxydash/releases/download/WebSocket++-${VERSION}-${RELEASE}/WebSocket++.tgz</url>
+</entry>
