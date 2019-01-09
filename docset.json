@@ -1,6 +1,6 @@
 {
     "name": "WebSocket++",
-    "version": "0.8.1-b0",
+    "version": "0.8.1-b1",
     "archive": "WebSocket++.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "0.8.1-b0",
-            "archive": "versions/0.8.1-b0/WebSocket++.tgz",
+            "version": "0.8.1-b1",
+            "archive": "versions/0.8.1-b1/WebSocket++.tgz",
         }
     ]
 }
