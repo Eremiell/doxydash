@@ -22,9 +22,9 @@ script:
   - make
 
 before_deploy:
-  - wget https://www.cryptopp.com/w/images/Logo-Steel.png
-  - convert Logo-Steel.png -resize 16x16! Crypto++.docset/icon.png
-  - convert Logo-Steel.png -resize 32x32! Crypto++.docset/icon@2x.png
+  - wget https://imgur.com/download/YjI7SKK -O icon.png
+  - convert icon.png -resize 16x16! Crypto++.docset/icon.png
+  - convert icon.png -resize 32x32! Crypto++.docset/icon@2x.png
   - sed -i "" 's@<string>doxygen</string>@<string>cryptopp</string>@' Crypto++.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf Crypto++.tgz Crypto++.docset
   - cd ../..
