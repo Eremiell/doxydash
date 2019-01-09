@@ -1,6 +1,6 @@
 {
     "name": "nlohmann-json",
-    "version": "v3.4.0-b1",
+    "version": "v3.5.0-b0",
     "archive": "nlohmann-json.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "v3.4.0-b1",
-            "archive": "versions/v3.4.0-b1/nlohmann-json.tgz",
+            "version": "v3.5.0-b0",
+            "archive": "versions/v3.5.0-b0/nlohmann-json.tgz",
         }
     ]
 }
