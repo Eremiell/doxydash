@@ -22,7 +22,7 @@ script:
   - make
 
 before_deploy:
-  - wget https://avatars0.githubusercontent.com/u/1006976?s=400&v=4 -O icon.png
+  - wget "https://avatars0.githubusercontent.com/u/1006976?s=400&v=4" -O icon.png
   - convert icon.png -resize 16x16! WebSocket++.docset/icon.png
   - convert icon.png -resize 32x32! WebSocket++.docset/icon@2x.png
   - sed -i "" 's@<string>doxygen</string>@<string>wspp</string>@' WebSocket++.docset/Contents/Info.plist
