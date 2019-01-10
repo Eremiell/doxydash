@@ -25,9 +25,9 @@ script:
   - make
 
 before_deploy:
-  - wget https://www.fltk.org/doc-1.3/FL200.png
-  - convert FL200.png -resize 16x16! FLTK.docset/icon.png
-  - convert FL200.png -resize 32x32! FLTK.docset/icon@2x.png
+  - wget "https://imgur.com/download/N21HGuP" -O icon.png
+  - convert icon.png -resize 16x16! FLTK.docset/icon.png
+  - convert icon.png -resize 32x32! FLTK.docset/icon@2x.png
   - sed -i "" 's@<string>doxygen</string>@<string>Fl</string>@' FLTK.docset/Contents/Info.plist
   - tar --exclude='.DS_Store' -cvzf FLTK.tgz FLTK.docset
   - cd ../../..
