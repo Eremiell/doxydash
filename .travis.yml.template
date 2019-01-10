@@ -1,0 +1,50 @@
+language: cpp
+os: osx
+osx_image: xcode9.2
+branches:
+  only:
+  - httpxx
+
+before_install:
+  - brew update && brew bundle
+
+install:
+  - git clone --recurse-submodules https://github.com/AndreLouisCaron/httpxx.git
+  - cd httpxx
+  - git checkout ${VERSION}
+
+before_script:
+  - cat ../Doxyfile.patch >> help/Doxyfile
+  - cat ../Doxyfile.patch >> Doxyfile
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make doc
+  - cd ../help/html
+  - make
+
+before_deploy:
+  - wget "https://imgur.com/download/5o10UXB" -O icon.png
+  - convert icon.png -resize 16x16! httpxx.docset/icon.png
+  - convert icon.png -resize 32x32! httpxx.docset/icon@2x.png
+  - sed -i "" 's@<string>doxygen</string>@<string>httpxx</string>@' httpxx.docset/Contents/Info.plist
+  - tar --exclude='.DS_Store' -cvzf httpxx.tgz httpxx.docset
+  - cd ../../..
+
+deploy:
+  provider: releases
+  api_key:
+    secure: RqFbiUdB6pegzmvEfD+tY3SCnYZ8AIDTB8ZJhvgTnCDG0vwkl63I3YGwdWpf4JbtG0M333pRxuaeIDSs/ncVQ9Qmj+lIzJXBZpYAehU0k8UyxRtf6BTC488xOpcIrux8JkrMSNrwhX5vTBk/c/S3dr64WbJJKIy5cVSoIt5EeWtSbjdjcxu5NKoHxRbzDdMJPPmFLad7se8bjuW839LWX7JucG2iGJ3jkYL+lsD0jAf7LVsrnW0iCoNDLWfYSNyrMDcXmfY7lWKV1bPx5AOOivgl65/lea1XAi7TKeq3uKlBd1rqer5+piWAayFg6pltDh+gCCebhdAGBvVhMApSR5Zouxe6/A+fyALSO8PAKDg6JuB17qijXwCRRc4dxnR/QYCw38dvUyQ00moqXiTiS0hURVJ4ew8xEH0pjuam9fj2o60+rWt+n5LnzrPyhA+r8OBeHz0hcXyyYbdH+WZAjBECBvFlBjkNQFvVlAyXvNR0gtkS1dStE6e6775/6IPbRDmWbYKN4PQplTS8mKdy6RR77zPdXhUpO3rZwrGYUjfATdI02boAqB/leOAJJXUTBlJ0EBTFSzOEqNcjs4JjSEKrwALPictZ/4Z4o19y/I0aK1xIL7u2x4FWMj9eXTCz1iri3Ha9392oYc5wwqwM9G2cSLbMWNOcq9n6NvHS0Mc=
+  file:
+    - "httpxx/help/html/httpxx.tgz"
+    - "httpxx/help/html/httpxx.docset/icon.png"
+    - "httpxx/help/html/httpxx.docset/icon@2x.png"
+    - "docset.json"
+    - "README.md"
+    - "httpxx.xml"
+  skip_cleanup: true
+  on:
+    repo: Eremiell/doxydash
+    branch: httpxx

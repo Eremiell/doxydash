@@ -1,0 +1,4 @@
+<entry>
+	<version>${VERSION}-${RELEASE}</version>
+	<url>http://github.com/Eremiell/doxydash/releases/download/httpxx-${VERSION}-${RELEASE}/httpxx.tgz</url>
+</entry>
