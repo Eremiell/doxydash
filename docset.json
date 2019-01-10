@@ -1,0 +1,17 @@
+{
+    "name": "FLTK",
+    "version": "release-1.3.4-1-b0",
+    "archive": "FLTK.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "release-1.3.4-1-b0",
+            "archive": "versions/release-1.3.4-1-b0/FLTK.tgz",
+        }
+    ]
+}
