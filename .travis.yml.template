@@ -1,0 +1,47 @@
+language: cpp
+os: osx
+osx_image: xcode9.2
+branches:
+  only:
+  - FLTK
+
+before_install:
+  - brew update && brew bundle
+
+install:
+  - git clone https://github.com/fltk/fltk.git
+  - cd fltk
+  - git checkout ${VERSION}
+
+before_script:
+  - cat ../Doxyfile.patch >> documentation/Doxyfile.in
+
+script:
+  - cd documentation
+  - make html
+  - cd html
+  - make
+
+before_deploy:
+  - wget https://www.fltk.org/doc-1.3/FL200.png
+  - convert FL200.png -resize 16x16! FLTK.docset/icon.png
+  - convert FL200.png -resize 32x32! FLTK.docset/icon@2x.png
+  - sed -i "" 's@<string>doxygen</string>@<string>Fl</string>@' FLTK.docset/Contents/Info.plist
+  - tar --exclude='.DS_Store' -cvzf FLTK.tgz FLTK.docset
+  - cd ../../..
+
+deploy:
+  provider: releases
+  api_key:
+    secure: RqFbiUdB6pegzmvEfD+tY3SCnYZ8AIDTB8ZJhvgTnCDG0vwkl63I3YGwdWpf4JbtG0M333pRxuaeIDSs/ncVQ9Qmj+lIzJXBZpYAehU0k8UyxRtf6BTC488xOpcIrux8JkrMSNrwhX5vTBk/c/S3dr64WbJJKIy5cVSoIt5EeWtSbjdjcxu5NKoHxRbzDdMJPPmFLad7se8bjuW839LWX7JucG2iGJ3jkYL+lsD0jAf7LVsrnW0iCoNDLWfYSNyrMDcXmfY7lWKV1bPx5AOOivgl65/lea1XAi7TKeq3uKlBd1rqer5+piWAayFg6pltDh+gCCebhdAGBvVhMApSR5Zouxe6/A+fyALSO8PAKDg6JuB17qijXwCRRc4dxnR/QYCw38dvUyQ00moqXiTiS0hURVJ4ew8xEH0pjuam9fj2o60+rWt+n5LnzrPyhA+r8OBeHz0hcXyyYbdH+WZAjBECBvFlBjkNQFvVlAyXvNR0gtkS1dStE6e6775/6IPbRDmWbYKN4PQplTS8mKdy6RR77zPdXhUpO3rZwrGYUjfATdI02boAqB/leOAJJXUTBlJ0EBTFSzOEqNcjs4JjSEKrwALPictZ/4Z4o19y/I0aK1xIL7u2x4FWMj9eXTCz1iri3Ha9392oYc5wwqwM9G2cSLbMWNOcq9n6NvHS0Mc=
+  file:
+    - "fltk/documentation/html/FLTK.tgz"
+    - "fltk/documentation/html/FLTK.docset/icon.png"
+    - "fltk/documentation/html/FLTK.docset/icon@2x.png"
+    - "docset.json"
+    - "README.md"
+    - "FLTK.xml"
+  skip_cleanup: true
+  on:
+    repo: Eremiell/doxydash
+    branch: FLTK
