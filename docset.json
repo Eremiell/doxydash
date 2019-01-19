@@ -1,0 +1,17 @@
+{
+    "name": "Eigen",
+    "version": "3.3.7-b0",
+    "archive": "Eigen.tgz",
+    "author": {
+        "name": "Jakub 'Eremiell' Marek",
+        "link": "https://twitter.com/Eremiell"
+    },
+    "aliases": [],
+
+    "specific_versions": [
+        { 
+            "version": "3.3.7-b0",
+            "archive": "versions/3.3.7-b0/Eigen.tgz",
+        }
+    ]
+}
