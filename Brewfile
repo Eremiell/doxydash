@@ -1,6 +1,6 @@
 brew 'doxygen'
 brew 'graphviz'
-brew 'git'
+brew 'mercurial'
 brew 'imagemagick'
 brew 'cmake'
 brew 'wget'
