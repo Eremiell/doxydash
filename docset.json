@@ -1,6 +1,6 @@
 {
     "name": "pqxx",
-    "version": "6.2.5-b2",
+    "version": "6.3.1-b0",
     "archive": "pqxx.tgz",
     "author": {
         "name": "Jakub 'Eremiell' Marek",
@@ -10,8 +10,8 @@
 
     "specific_versions": [
         { 
-            "version": "6.2.5-b2",
-            "archive": "versions/6.2.5-b2/pqxx.tgz",
+            "version": "6.3.1-b0",
+            "archive": "versions/6.3.1-b0/pqxx.tgz",
         }
     ]
 }
