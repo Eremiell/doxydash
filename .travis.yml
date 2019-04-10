@@ -11,7 +11,7 @@ before_install:
 install:
   - git clone https://github.com/jtv/libpqxx.git
   - cd libpqxx
-  - git checkout 6.3.1
+  - git checkout 6.4.3
 
 before_script:
   - cat ../Doxyfile.patch >> doc/Doxyfile.in
