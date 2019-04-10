@@ -11,7 +11,7 @@ before_install:
 install:
   - git clone https://github.com/nlohmann/json.git
   - cd json
-  - git checkout v3.5.0
+  - git checkout v3.6.1
 
 before_script:
   - cd doc
